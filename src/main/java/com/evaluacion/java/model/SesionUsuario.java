@@ -21,6 +21,7 @@ public class SesionUsuario {
     public SesionUsuario() {
 
     }
+
     @Id
     public Long getId() {
         return id;

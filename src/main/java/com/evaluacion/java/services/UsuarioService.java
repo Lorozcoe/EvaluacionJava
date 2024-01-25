@@ -11,4 +11,6 @@ public interface UsuarioService {
     String EliminarUsuario(Long id);
 
     Usuario save(Usuario usuario);
+
+    Usuario validaEmail(Usuario usuario);
 }

@@ -7,3 +7,4 @@ ocuparon para realizar las pruebas.
 Este proyecto trabaja con JWT. Los token tienen una duracion de 15 min el cual se puede realizar un 
 cambio en la duracion en application.properties
 
+![Diagrama de Flujo .png](..%2F..%2FDiagrama%20de%20Flujo%20.png)
