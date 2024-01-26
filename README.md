@@ -22,12 +22,10 @@ ocuparon para realizar las pruebas.
 
 Ejemplos de consultas Postman
 -
-1. **Obtener Todos los Usuarios**
-    - **Endpoint:** `GET http://localhost:8090/api/Usuarios`
-    - **Descripción:** Obtiene todos los usuarios registrados.
 
-2. **Crear un Nuevo Usuario**
+1. **Crear un Nuevo Usuario**
     - **Endpoint:** `POST http://localhost:8090/api/Usuario`
+    - **Descripción:** Crea un nuevo usuario no se pueden repetir emails.
     - **Body de la Solicitud (Ejemplo):**
       ```json
       {
@@ -43,15 +41,66 @@ Ejemplos de consultas Postman
         ]
       }
       ```
-
-    - **Descripción:** Crea un nuevo usuario no se pueden repetir emails.
+2. **Obtener Todos los Usuarios**
+   - **Endpoint:** `GET http://localhost:8090/api/Usuarios`
+   - **Descripción:** Obtiene la información de todos los usuarios registrados.
+   
+   
 3. **Eliminar Usuario por Id**
 - **Endpoint:** 'DELETE http://localhost:8090/api/Usuario/{id}'
 - **Descripción:** Elimina usuario del sistema según su Id.
 
+4. **Login**
+   - **Endpoint:** `POST http://localhost:8090/api/login`
+   - **Descripción:** Validador que activa la sesion del usuario.
+   - **Body de la Solicitud (Ejemplo):**
+    ```json
+   {
+     "email": "lucas1@gmail.com",
+     "password": "123456"
+   }
+   ```
+5. **Actualizar Usuario**
+   - **Endpoint:** `PUT http://localhost:8090/api/Usuario`
+   - **Descripción:** Actualiza la información del usuario registrado, para hacer este cambio debe ejecutar el `/login`
+   - **Body de la Solicitud (Ejemplo):**
+    ```json
+   {
+     "nombre": "Lucas Elguin",
+    "email": "lucas2@gmail.com",
+    "contraseña": "123456",
+    "telefonos": [
+        {
+            "numero": "7654321",
+            "codigoCiudad": "2",
+            "codigoPais": "58"
+        }
+      ]
+   }
+   ```
+6. **Actualizar Contraseña**
+   - **Endpoint:** `PATCH http://localhost:8090/api/Contraseña/{id}`
+   - **Descripción:** Actualiza la contraseña del usuario registrado según su Id, para hacer este cambio debe ejecutar el `/login`
+   - **Body de la Solicitud (Ejemplo):**
+   ```json
+   {
+     "contraseña": "passNueva"
+   }
+   ```
+7. **Logout**
+   - **Endpoint:** `POST http://localhost:8090/api/logout`
+   - **Descripción:** Realiza la desactivación de la sesion del usuario actual.
+   - **Body de la Solicitud (Ejemplo):**
+   ```json
+   {
+     "email": "lucas1@gmail.com"
+   }
+   ```
+
 Diagrama de Flujo de la Solución
 -
-![Diagrama de Flujo .png](..%2F..%2FDiagrama%20de%20Flujo%20.png)
+
+![Diagrama de Flujo .png](Diagrama%20de%20Flujo%20.png)
 
 Notas
 -
